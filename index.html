@@ -970,20 +970,6 @@
             z-index: 1000;
         }
         
-        .music-toggle {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(20, 20, 30, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--shield-light);
-            font-size: 1.5rem;
-            cursor: pointer;
-            border: 2px solid var(--shield-light);
-            box-shadow: 0 0 15px rgba(29, 122, 191, 0.5);
-        }
     </style>
 </head>
 <body>
@@ -1018,18 +1004,6 @@
                 <div class="info-title">TIME TO ARRIVAL</div>
                 <div class="info-data" id="arrivalTime">00:00:30</div>
             </div>
-        </div>
-    </div>
-    
-    <!-- Audio Player -->
-    <audio id="backgroundMusic" loop>
-        <source src="C:\Users\agsac\Downloads\mcu-theme.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
-    <div class="audio-controls">
-        <div class="music-toggle" id="musicToggle">
-            <i class="fas fa-music"></i>
         </div>
     </div>
     
@@ -1844,19 +1818,6 @@
                 });
             }, 1000);
             
-            // Music toggle
-            const music = document.getElementById('backgroundMusic');
-            const musicToggle = document.getElementById('musicToggle');
-            
-            musicToggle.addEventListener('click', function() {
-                if (music.paused) {
-                    music.play().catch(e => console.log('Autoplay prevented:', e));
-                    musicToggle.innerHTML = '<i class="fas fa-volume-up"></i>';
-                } else {
-                    music.pause();
-                    musicToggle.innerHTML = '<i class="fas fa-volume-mute"></i>';
-                }
-            });
         });
     </script>
 </body>
